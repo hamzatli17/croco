@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Croco-Academie"
+    }
+  },
+  "defaultProject": "Croco-Academie",
+  "cli": {
+    "analytics": false
+  }
 }

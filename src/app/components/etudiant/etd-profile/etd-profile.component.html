@@ -1,0 +1,105 @@
+<div class="main-content" style="padding-top: 8%">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" data-background-color="orange">
+            <h4 class="title">Mon Profile</h4>
+            <a
+              class="btn btn-black btn-round btn-sm"
+              data-background-color="black"
+              >Demande Modification</a
+            >
+          </div>
+          <div class="card-content">
+            <form #etdForm="ngForm" (ngSubmit)="update()">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group ">
+                    <label class="control-label">Nom</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="etudiant.nom"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="nom "
+                    />
+                  </div>
+                </div>
+              
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <label class="control-label">prenom</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="etudiant.prenom"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="prenom"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <label class="control-label">email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      [(ngModel)]="etudiant.email"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="email"
+                    />
+                  </div>
+                </div>
+             
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <label class="control-label">password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      [(ngModel)]="etudiant.password"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="password"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <input
+                      type="submit"
+                      class="btn btn-black pull-right py-3 px-5"
+                      value="Mise a jour  profile"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <a href="#pablo">
+              <img class="img" src="" />
+            </a>
+          </div>
+
+          <div class="content">
+            <p class="card-content">Bonjour</p>
+            <h6 class="category text-gray">
+              <p class="card-content">etudiant</p>
+              {{ etudiant.cycle }}
+            </h6>
+            <h4 class="card-title">{{ etudiant.prenom }} {{ etudiant.nom }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

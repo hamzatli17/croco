@@ -1,0 +1,67 @@
+<div class="container-fluid" style="padding-top: 8%">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header" data-background-color="orange">
+          <h4 class="title">nouvelle note</h4>
+        </div>
+        <div class="card-content" style="text-align: center">
+          <form [formGroup]="notePForm">
+            <div class="form-group">
+              <textarea
+                type="text"
+                name=""
+                class="form-control"
+                id=""
+                cols="30"
+                rows="10"
+                formControlName="note"
+                placeholder="Write something..."
+              ></textarea>
+            </div>
+            <button
+              (click)="save(notePForm.value)"
+              type="submit"
+              class="btn btn-black btn-round btn-xs"
+              style="color: rgb(126, 79, 170); text-align: center"
+            >
+              enregistrer
+            </button>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <ng-container *ngFor="let n of notesPers; let i = index">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">{{ n.date }}</h4>
+                <p class="card-text">
+                  {{ n.text  }}
+                </p>
+              </div>
+              <div class="card-footer">
+                <!-- <a
+                  *ngIf="showActions"
+                  (click)="modifier(n)"
+                  class="btn btn-primary btn-block"
+                  >modifier</a
+                > -->
+              </div>
+            </div>
+          </div>
+          <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
